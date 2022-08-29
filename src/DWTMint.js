@@ -14,7 +14,7 @@ export const StyledButton = styled.button`
   padding: 10px;
   font-weight: bold;
   color: #000000;
-  width: 100px;
+  width: 200px;
   cursor: pointer;
   box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
   -webkit-box-shadow: 0px 6px 0px -2px rgba(250, 250, 250, 0.3);
@@ -153,10 +153,11 @@ function DWTMint() {
 
           <StyledButton onClick={(e) => {
                 e.preventDefault();
-                redirectTo('')}}>Public</StyledButton>
+                redirectTo('')}}>$MATIC MINT</StyledButton>
+          -------
           <StyledButton onClick={(e) => {
                 e.preventDefault();
-                redirectTo('DWTMint')}}>DWTMint</StyledButton>
+                redirectTo('DWTMint')}}>$DWT MINT</StyledButton>
         </s.Container>
         <s.SpacerMedium />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }}>
@@ -196,7 +197,7 @@ function DWTMint() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  Each DiceWarNFT costs { dwtMintFee } DWT.
+                  Each DiceWarNFT costs { dwtMintFee === 0 ? "???" : dwtMintFee } DWT.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.SpacerSmall />

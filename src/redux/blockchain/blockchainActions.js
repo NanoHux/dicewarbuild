@@ -68,47 +68,29 @@ export const connect = () => {
             window.location.reload();
           });
           // Add listeners end
-        } else if (networkId === "4") { //rinkeby contract
-          //dispatch(connectFailed("Change network to Polygon."));
-          const SmartContractObj = new Web3EthContract(
-            SmartContract,
-            //"0xc1468aC4B85d6A3b8812802f0E30B4DE9946f044"
-            "0x3813bf4Bd924A5ec9F8e264D12cfa76815d8Bb75"
-          );
-          dispatch(
-            connectSuccess({
-              account: accounts[0],
-              smartContract: SmartContractObj,
-              web3: web3,
-            })
-          );
-          // Add listeners start
-          ethereum.on("accountsChanged", (accounts) => {
-            dispatch(updateAccount(accounts[0]));
-          });
-          ethereum.on("chainChanged", () => {
-            window.location.reload();
-          });
-        } else { //staging contract
-          //dispatch(connectFailed("Change network to Polygon."));
-          const SmartContractObj = new Web3EthContract(
-            SmartContract,
-            "0x557d27eB655EB6021496B43E8B697e7F14Ea005b"
-          );
-          dispatch(
-            connectSuccess({
-              account: accounts[0],
-              smartContract: SmartContractObj,
-              web3: web3,
-            })
-          );
-          // Add listeners start
-          ethereum.on("accountsChanged", (accounts) => {
-            dispatch(updateAccount(accounts[0]));
-          });
-          ethereum.on("chainChanged", () => {
-            window.location.reload();
-          });
+        }  else { //staging contract
+          try {
+            await ethereum.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: web3.utils.toHex(137) }]
+            });
+        } catch (err) {
+            // This error code indicates that the chain has not been added to MetaMask
+            if (err.code === 4902) {
+            await ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [
+                {
+                    chainName: 'Polygon Mainnet',
+                    chainId: web3.utils.toHex(137),
+                    nativeCurrency: { name: 'MATIC', decimals: 18, symbol: 'MATIC' },
+                    rpcUrls: ['https://polygon-rpc.com/'],
+                    blockExplorerUrls: ['https://polygonscan.com']
+                }
+                ]
+            });
+            }
+        }
         }
       } catch (err) {
         dispatch(connectFailed("Something went wrong."));
