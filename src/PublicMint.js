@@ -148,7 +148,7 @@ function PublicMint() {
         <s.TextTitle
           style={{ textAlign: "center", fontSize: 28, fontWeight: "bold" }}
         >
-          Mint a DiceWarNFT
+          Mint a DiceWar NFT with Matic!
         </s.TextTitle>
         <s.SpacerMedium />
         <s.Container ai={"center"} jc={"center"} fd={"row"}>
@@ -199,7 +199,7 @@ function PublicMint() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  Each DiceWarNFT costs { mintFee === 0 ? "???" : mintFee  } MATIC.
+                  Each DiceWar NFT costs { mintFee === 0 ? "???" : mintFee  } MATIC.
                 </s.TextTitle>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
@@ -257,7 +257,7 @@ function PublicMint() {
         </ResponsiveWrapper>
         <s.SpacerSmall />
         <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-          <s.TextDescription style={{ textAlign: "center", fontSize: 9 }}>
+          <s.TextDescription style={{ textAlign: "center", fontSize: 20 }}>
             Please make sure you are connected to the right network (Polygon
             Mainnet) and the correct address. Please note: Once you make the
             purchase, you cannot undo this action.

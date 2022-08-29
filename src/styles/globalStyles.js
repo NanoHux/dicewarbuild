@@ -52,21 +52,24 @@ export const Container = styled.div`
 
 export const TextTitle = styled.p`
   color: var(--white);
-  font-size: 18px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 1.6;
+  font-family: 'NunitoSans';
 `;
 
 export const TextSubTitle = styled.p`
   color: var(--white);
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1.6;
+  font-family: 'NunitoSans';
 `;
 
 export const TextDescription = styled.p`
   color: var(--white);
-  font-size: 12px;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 2.6;
+  font-family: 'NunitoSans';
 `;
 
 export const StyledClickable = styled.div`

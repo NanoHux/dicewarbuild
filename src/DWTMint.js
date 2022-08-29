@@ -146,7 +146,7 @@ function DWTMint() {
         <s.TextTitle
           style={{ textAlign: "center", fontSize: 28, fontWeight: "bold" }}
         >
-          Mint a DiceWarNFT with DiceWarToken!
+          Mint a DiceWar NFT with DiceWarToken!
         </s.TextTitle>
         <s.SpacerMedium />
         <s.Container ai={"center"} jc={"center"} fd={"row"}>
@@ -184,7 +184,7 @@ function DWTMint() {
                 </s.TextTitle>
                 <s.SpacerSmall />
                 <s.TextDescription style={{ textAlign: "center" }}>
-                  You can still find DiceWarNFT on{" "}
+                  You can still find DiceWar NFT on{" "}
                   <a
                     target={"_blank"}
                     rel={"noreferrer"}
@@ -197,7 +197,7 @@ function DWTMint() {
             ) : (
               <>
                 <s.TextTitle style={{ textAlign: "center" }}>
-                  Each DiceWarNFT costs { dwtMintFee === 0 ? "???" : dwtMintFee } DWT.
+                  Each DiceWar NFT costs { dwtMintFee === 0 ? "???" : dwtMintFee } DWT.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.SpacerSmall />
