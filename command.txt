@@ -1,0 +1,191 @@
+cd E:\System\Desktop\NFT Project\NFT-Minting-Project\Nodejs-Web3-Minter
+
+npm run start
+
+truffle migrate --reset
+
+truffle console
+
+c = await PorkiNFTSpace.deployed()
+
+Ganache RPC
+HTTP://127.0.0.1:7545
+1337
+
+========================================================================================================================================================================================
+
+sudo su -
+
+#!/bin/bash
+apt update
+git clone https://github.com/sammizai/porkimintingdapp
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+apt install -y nodejs
+cd porkimintingdapp
+npm install
+export PORT=80
+npm run start
+
+lsof -i tcp:80
+kill -9 PID
+
+sudo su -
+apt update
+git clone https://github.com/sammizai/porkimintingdapp
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+apt install -y nodejs
+cd porkimintingdapp
+npm install
+export PORT=80
+npm run start
+
+forever start --minUptime 5000 --spinSleepTime 2000 -c "npm run start" ./
+
+==========================================================================================================================================
+
+Deploy with Build Folder and Nginx:
+
+sudo su -
+apt update
+git clone https://github.com/sammizai/porkibuild
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+apt install -y nodejs
+apt install nginx
+cp -r porkibuild ../var/www/
+nano ../etc/nginx/sites-available/default
+	change root /var/www/porkibuild;
+	change try_files $uri /index.html;
+systemctl restart nginx	
+
+
+==========================================================================================================================================
+
+Deploy Porki API:
+
+sudo su -
+apt update
+git clone https://github.com/sammizai/porkiapi
+curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+apt install -y nodejs
+cd porkiapi
+npm install
+npm install forever -g
+forever start index.js
+
+==========================================================================================================================================
+
+
+git pull https://github.com/sammizai/porkimintingdapp.git
+git pull https://github.com/sammizai/porkiapi.git
+
+sudo su -
+cd porkimintingdapp
+export PORT=80
+npm run start
+
+
+sudo su -
+cd porkiapi
+node index.js
+
+How to Kill Process:
+lsof -i tcp:3000
+kill -9 PID
+
+How to run index.js with forever
+forever start index.js
+
+
+Rinkeby Test Contract
+Multi file
+0xD884D24E79659Ed4A4aEC7673B4A54df5b75D75e
+0x4d8fff74f923f2d998829ce2b7f1c3c5cad543c5
+0xc1468aC4B85d6A3b8812802f0E30B4DE9946f044
+
+One file
+0xA8dAED977a9ab9d35B01B8dC95CD4F4CE4492ed4
+
+========================================================================================================================================================================================
+
+Localhost Ganache Porki API String:
+Account 1
+{
+	"ownerAddress": "0x75CfD5040aa37E183eE6aDB247D2352aE6804eeD",
+	"verify": "b8686ca23cf63cac2f5abb56f9b4ac06ffb34550fb6b6013c485ee58984dd0e8"
+}
+
+Account 2
+{
+	"ownerAddress": "0xFd5A5A113f5aD64636B117b73E5Bcc87C8D0d427",
+	"verify": "130cc091cf36c8412360bce8397937fc9b399b636d61d25974248e8156f168ea"
+}
+
+Account 3
+{
+	"ownerAddress": "0xeECFfD6bd991AF88dE4c5b075E6F9E6F89C3679a",
+	"verify": "ed909fa4080e2de5ed62438d6b42be35e39f397bcd63e3302a2d629dc6558ebd"
+}
+
+Account 4
+{
+	"ownerAddress": "0xFA65d9F327969a0209925E8d0870E14B9311028E",
+	"verify": "b49ef4145b94895a525cb2595d0a37a942aac95a37b157e63238e3cfb6fae592"
+}
+
+Account 5
+{
+	"ownerAddress": "0x5f8A5a55F554493FDa243c7b4F16065f2D62aF0d",
+	"verify": "bf3cf6251b82b56f41396ce1a5bbe531f397a5367c0961f4abc1bdf0e59b7609"
+}
+
+========================================================================================================================================================================================
+
+contractAddress: 0xc1468aC4B85d6A3b8812802f0E30B4DE9946f044
+CheckSum = P0sP@Rk1
+
+verifyString Format: ownerAddress + contractAddress + CheckSum
+
+Sample:
+verifyString: 0x75CfD5040aa37E183eE6aDB247D2352aE6804eeD0xc1468aC4B85d6A3b8812802f0E30B4DE9946f044dP0sP@Rk1
+verifyHash: dada8db728ec298d2134317ee7df4d88153d14f633e87f4bbc2076466b0e3efe
+
+Account 1
+{
+	"network": "polygon",
+	"ownerAddress": "0x75CfD5040aa37E183eE6aDB247D2352aE6804eeD",
+	"verify": "dada8db728ec298d2134317ee7df4d88153d14f633e87f4bbc2076466b0e3efe"
+}
+
+Account 2
+{
+	"network": "polygon",
+	"ownerAddress": "0xFd5A5A113f5aD64636B117b73E5Bcc87C8D0d427",
+	"verify": "868b8d523a846ced34f4c3bc1bae708d60437188530cfecd3b995584131f74aa"
+}
+
+Account 3
+{
+	"network": "polygon",
+	"ownerAddress": "0xeECFfD6bd991AF88dE4c5b075E6F9E6F89C3679a",
+	"verify": "5303602d2312a7d5b74609b0b5692184332fc7f3e39855b8ed9277ea74cc1b33"
+}
+
+Account 4
+{
+	"network": "polygon",
+	"ownerAddress": "0xFA65d9F327969a0209925E8d0870E14B9311028E",
+	"verify": "b586010f54a8375e57b27a203fd5921f74412f0484b0ae775c17124302423ddd"
+}
+
+Account 5
+{
+	"network": "polygon",
+	"ownerAddress": "0x5f8A5a55F554493FDa243c7b4F16065f2D62aF0d",
+	"verify": "4ea2895bb66eb9150f4572dfb1ccf5fd5bfe04b7e2ebbb55ad955376dcf68e84"
+}
+
+========================================================================================================================================================================================
+
+
+
+Contract 2: 0x3813bf4Bd924A5ec9F8e264D12cfa76815d8Bb75
